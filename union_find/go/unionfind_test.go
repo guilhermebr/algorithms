@@ -1,3 +1,10 @@
+/*
+ * Union Find Algorithms test
+ * @gbrezende
+ * guilhermebr@gmail.com
+ * http://guilhermebr.com
+ */
+
 package unionfind
 
 import "testing"
