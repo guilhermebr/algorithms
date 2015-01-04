@@ -5,16 +5,14 @@
  * http://guilhermebr.com
  */
 
-package main
+package unionfind
 
-import "fmt"
-
-type QuickFindUF struct {
+type QuickFind struct {
 	elements []int
 }
 
-func NewQuickFindUF(N int) *QuickFindUF {
-	qf := &QuickFindUF{}
+func NewQuickFind(N int) *QuickFind {
+	qf := &QuickFind{}
 
 	qf.elements = make([]int, N)
 
@@ -26,11 +24,11 @@ func NewQuickFindUF(N int) *QuickFindUF {
 
 }
 
-func (self *QuickFindUF) compare(p, q int) bool {
+func (self *QuickFind) connected(p, q int) bool {
 	return self.elements[p] == self.elements[q]
 }
 
-func (self *QuickFindUF) union(p, q int) {
+func (self *QuickFind) union(p, q int) {
 	pid := self.elements[p]
 	qid := self.elements[q]
 
@@ -39,22 +37,5 @@ func (self *QuickFindUF) union(p, q int) {
 			self.elements[i] = qid
 		}
 	}
-
-}
-
-func main() {
-
-	qf := NewQuickFindUF(10)
-
-	qf.union(9, 7)
-	qf.union(5, 1)
-	qf.union(7, 0)
-	qf.union(8, 7)
-	qf.union(7, 6)
-	qf.union(1, 9)
-
-	fmt.Println(qf.elements)
-	//	fmt.Println(qf.compare(4, 3))
-	///	fmt.Println(qf.compare(6, 4))
 
 }
