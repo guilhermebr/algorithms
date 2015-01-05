@@ -54,7 +54,7 @@ func Test_Stack_LinkedList(t *testing.T) {
 }
 
 func Test_Stack_Array(t *testing.T) {
-	stack := NewStackArray(10)
+	stack := NewStackArray()
 
 	if !stack.isEmpty() {
 		t.Errorf("expected true")
@@ -65,8 +65,6 @@ func Test_Stack_Array(t *testing.T) {
 	stack.push("or")
 	stack.push("not")
 	stack.push("to")
-
-	//stack.debug()
 
 	if stack.pop() != "to" {
 		t.Errorf("expected 'to' ")
